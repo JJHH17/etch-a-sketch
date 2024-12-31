@@ -21,16 +21,9 @@ container.style.display = "flex";
 container.style.flexWrap = "wrap";
 
 // setting up hover event, changes color of div when user hovers over the relevant div
-// element.addEventListener("mouseover", myFunction);
-// container.addEventListener("mouseover", () => {
-//     // Change colour of div 
-//     // modify below to change colour of current div
-//     this.style.backgroundColor = 'green';
-//     var divs = this.getElementsByTagName('div');
-//     h2s[0].style.backgroundColor = 'blue';
-// }) 
 container.addEventListener("mouseover", (e) => {
     if (e.target !== container) {
-        e.target.style.backgroundColor = 'green';
+        e.target.style.backgroundColor = 'yellow';
     }
 });
+

@@ -27,3 +27,13 @@ container.addEventListener("mouseover", (e) => {
     }
 });
 
+// Adding reset button functionality, resets divs and prompts user for amount of squares added
+const resetButton = document.querySelector(".resetButton");
+resetButton.addEventListener("click", () => {
+    // Empties the previously used divArray
+    divArray.forEach((div) => container.removeChild(div));
+    divArray = [];
+
+    // Allow the user to enter a value which will append the new grid
+    
+})

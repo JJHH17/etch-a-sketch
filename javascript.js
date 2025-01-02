@@ -41,7 +41,8 @@ resetButton.addEventListener("click", () => {
     for (let i = 0; i< newGrid * newGrid; i++) {
 
         // Calculates the dimensions of each cell
-        const cellSize = 100 / newGrid;
+        // we could tweak the dimensions based on number added, this logic to be added
+        const cellSize = 75 / newGrid;
         const cell = document.createElement("div");
         cell.style.width = `${cellSize}%`;
         cell.style.height = `${cellSize}%`;

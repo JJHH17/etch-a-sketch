@@ -36,19 +36,32 @@ resetButton.addEventListener("click", () => {
 
     // Prompt for grid size (input/invalid entry handling to be entered )
     // Alert prompts user to enter value
-    let newGrid = prompt('Please enter a new grid size:'); 
-    // creates new grid based on above user feedback
-    for (let i = 0; i< newGrid * newGrid; i++) {
+    let newGrid = prompt('Please enter a new grid size (10-100):'); 
 
-        // Calculates the dimensions of each cell
-        // we could tweak the dimensions based on number added, this logic to be added
-        const cellSize = 75 / newGrid;
-        const cell = document.createElement("div");
-        cell.style.width = `${cellSize}%`;
-        cell.style.height = `${cellSize}%`;
-        cell.style.border = "1px solid black";
-        container.appendChild(cell);
+    // Event/error handling
+    // Handles user going over 100
+    if (newGrid > 100){
+        alert('Please enter a number under 100');
     }
+    // Handles user going below 10
+    if (newGrid < 10){
+        alert('Please enter a number over 10');
+    }
+    // creates new grid based on above user feedback, as long as it's between 10:100
+    if (newGrid >= 10 && newGrid <= 100) {
+        for (let i = 0; i< newGrid * newGrid; i++) {
+
+            // Calculates the dimensions of each cell
+            // we could tweak the dimensions based on number added, this logic to be added
+            const cellSize = 75 / newGrid;
+            const cell = document.createElement("div");
+            cell.style.width = `${cellSize}%`;
+            cell.style.height = `${cellSize}%`;
+            cell.style.border = "1px solid black";
+            container.appendChild(cell);
+        }
+    }
+
 
     // remove below if needed
     // let gridSize = 16; // Default to 16x16

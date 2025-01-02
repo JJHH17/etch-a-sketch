@@ -29,7 +29,12 @@ container.addEventListener("mouseover", (e) => {
         let green = Math.floor(Math.random()* 255);
         let blue = Math.floor(Math.random()* 255);
         e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
-    }
+        // Get current opacity or default to 0.1 if not set
+        let currentOpacity = parseFloat(e.target.style.opacity) || 0.1;
+        // Increment opacity by 0.1 (10%) and cap it at 1 (100%, so full rgb colour)
+        let newOpacity = Math.min(currentOpacity + 0.1, 1);
+        // Set the new opacity
+        e.target.style.opacity = newOpacity;    }
 });
 
 // Reset button functionality

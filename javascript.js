@@ -24,7 +24,11 @@ createGrid(16);
 // Event listener for hover effect
 container.addEventListener("mouseover", (e) => {
     if (e.target !== container) {
-        e.target.style.backgroundColor = "yellow";
+        // Randomizes the backgroundColor that's appended to target
+        let red = Math.floor(Math.random()* 255);
+        let green = Math.floor(Math.random()* 255);
+        let blue = Math.floor(Math.random()* 255);
+        e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
     }
 });
 
@@ -55,9 +59,4 @@ resetButton.addEventListener("click", () => {
     } else {
         alert('Please enter a value between 10 and 100'); 
     }
-
-
-    // remove below if needed
-    // let gridSize = 16; // Default to 16x16
-    createGrid(gridSize);
 });
